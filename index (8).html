@@ -1,0 +1,1158 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Opulent Essence - Premium Perfume Brand
+  </title>
+  <style>
+   /* Reset and base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body, html {
+    margin: 0; padding: 0;
+    font-family: 'Cinzel', serif;
+    background-color: #121212;
+    color: #d9c9b6;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  a {
+    color: #bfa46f;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover, a:focus {
+    color: #f0d87d;
+    outline: none;
+  }
+  h1,h2,h3,h4,h5,h6 {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    margin: 0 0 0.5em 0;
+    color: #f0d87d;
+    text-shadow:
+      0 0 5px #bfa46f,
+      0 0 10px #bfa46f;
+  }
+  p {
+    line-height: 1.6;
+    color: #cfc1a6;
+  }
+  button {
+    font-family: 'Cinzel', serif;
+    cursor: pointer;
+    border: none;
+    background: #bfa46f;
+    color: #121212;
+    font-weight: 700;
+    padding: 0.8em 2em;
+    border-radius: 50px;
+    box-shadow:
+      0 0 10px #bfa46f,
+      0 0 20px #f0d87d;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  button:hover, button:focus {
+    background: #f0d87d;
+    box-shadow:
+      0 0 15px #f0d87d,
+      0 0 30px #f0d87d;
+    outline: none;
+  }
+  input, textarea {
+    font-family: 'Cinzel', serif;
+    background: #1e1e1e;
+    border: 1.5px solid #bfa46f;
+    color: #d9c9b6;
+    padding: 0.8em 1em;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+    width: 100%;
+  }
+  input:focus, textarea:focus {
+    border-color: #f0d87d;
+    outline: none;
+    box-shadow:
+      0 0 8px #f0d87d;
+  }
+  label {
+    display: block;
+    margin-bottom: 0.3em;
+    font-weight: 600;
+    color: #f0d87d;
+  }
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #1e1e1e;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #bfa46f;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #f0d87d;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+  }
+
+  /* Navigation */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(18,18,18,0.95);
+    border-bottom: 1px solid #3a2f1a;
+    z-index: 1000;
+    box-shadow:
+      0 0 15px rgba(191,164,111,0.3);
+  }
+  nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+  }
+  nav .logo {
+    font-size: 1.8rem;
+    letter-spacing: 0.15em;
+    color: #f0d87d;
+    text-shadow:
+      0 0 5px #bfa46f,
+      0 0 10px #bfa46f;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2em;
+  }
+  nav ul li a {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.5em 0;
+    position: relative;
+  }
+  nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #f0d87d;
+    transition: width 0.3s ease;
+  }
+  nav ul li a:hover::after,
+  nav ul li a:focus::after {
+    width: 100%;
+  }
+
+  /* Hamburger for mobile */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #bfa46f;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  nav ul.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: #1a1a1a;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: 70vw;
+    max-width: 300px;
+    height: calc(100vh - 70px);
+    padding: 2em 1.5em;
+    box-shadow:
+      -5px 0 15px rgba(191,164,111,0.5);
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+  nav ul.mobile-menu.open {
+    display: flex;
+    transform: translateX(0);
+  }
+  nav ul.mobile-menu li {
+    margin-bottom: 1.5em;
+  }
+  nav ul.mobile-menu li a {
+    font-size: 1.3rem;
+    color: #f0d87d;
+  }
+
+  /* Hero Section */
+  #hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    padding-top: 70px;
+    background: radial-gradient(ellipse at center, #1a1a1a 0%, #0d0d0d 80%);
+  }
+  #hero .hero-content {
+    max-width: 600px;
+    text-align: center;
+    z-index: 10;
+  }
+  #hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5em;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  #hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2em;
+    color: #cfc1a6;
+  }
+  #hero button.cta {
+    font-size: 1.2rem;
+    padding: 1em 3em;
+    box-shadow:
+      0 0 15px #f0d87d,
+      0 0 30px #bfa46f;
+    transition: box-shadow 0.4s ease;
+  }
+  #hero button.cta:hover, #hero button.cta:focus {
+    box-shadow:
+      0 0 25px #f0d87d,
+      0 0 50px #f0d87d;
+  }
+
+  /* 3D Perfume Bottle Container */
+  #hero .bottle-container {
+    position: relative;
+    width: 320px;
+    height: 480px;
+    margin: 0 auto;
+    perspective: 1500px;
+  }
+  #hero .bottle {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: slowRotate 20s linear infinite;
+    cursor: grab;
+    user-select: none;
+    filter: drop-shadow(0 0 10px #bfa46f);
+  }
+  #hero .bottle img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow:
+      0 0 20px #bfa46f,
+      inset 0 0 30px #f0d87d;
+    transform-style: preserve-3d;
+  }
+  @keyframes slowRotate {
+    0% { transform: rotateY(0deg) rotateX(5deg); }
+    100% { transform: rotateY(360deg) rotateX(5deg); }
+  }
+
+  /* Section Titles */
+  section h2.section-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin: 3em 0 1em 0;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #f0d87d;
+    text-shadow:
+      0 0 8px #bfa46f,
+      0 0 15px #f0d87d;
+  }
+
+  /* Product Detail Page */
+  #product-detail {
+    padding: 4em 1.5em 6em 1.5em;
+    background: #1a1a1a;
+    min-height: 100vh;
+  }
+  #product-detail .container {
+    display: flex;
+    gap: 3em;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  #product-detail .product-images {
+    flex: 1 1 320px;
+    max-width: 400px;
+    perspective: 1500px;
+  }
+  #product-detail .product-main-image {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow:
+      0 0 30px #bfa46f,
+      inset 0 0 40px #f0d87d;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+    cursor: grab;
+  }
+  #product-detail .product-thumbnails {
+    margin-top: 1.5em;
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+  }
+  #product-detail .product-thumbnails img {
+    width: 60px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    box-shadow:
+      0 0 8px #bfa46f;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+  #product-detail .product-thumbnails img.selected {
+    border-color: #f0d87d;
+  }
+  #product-detail .product-info {
+    flex: 1 1 320px;
+    max-width: 500px;
+    color: #d9c9b6;
+  }
+  #product-detail .product-info h2 {
+    font-size: 2.8rem;
+    margin-bottom: 0.3em;
+  }
+  #product-detail .product-info .price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f0d87d;
+    margin-bottom: 1em;
+    text-shadow:
+      0 0 8px #bfa46f;
+  }
+  #product-detail .product-info .description {
+    font-size: 1.1rem;
+    margin-bottom: 2em;
+    color: #cfc1a6;
+  }
+  #product-detail .product-info .scent-notes {
+    margin-bottom: 2em;
+  }
+  #product-detail .product-info .scent-notes h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5em;
+    color: #f0d87d;
+  }
+  #product-detail .product-info .scent-notes ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+  #product-detail .product-info .scent-notes ul li {
+    background: #2a2a2a;
+    padding: 0.5em 1em;
+    border-radius: 20px;
+    box-shadow:
+      0 0 8px #bfa46f inset;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #f0d87d;
+  }
+  #product-detail .product-info button.add-to-cart {
+    font-size: 1.3rem;
+    padding: 1em 3em;
+    box-shadow:
+      0 0 15px #f0d87d,
+      0 0 30px #bfa46f;
+    transition: box-shadow 0.4s ease;
+  }
+  #product-detail .product-info button.add-to-cart:hover,
+  #product-detail .product-info button.add-to-cart:focus {
+    box-shadow:
+      0 0 25px #f0d87d,
+      0 0 50px #f0d87d;
+  }
+
+  /* About Us Page */
+  #about {
+    background: #121212;
+    padding: 4em 1.5em 6em 1.5em;
+    min-height: 100vh;
+  }
+  #about .container {
+    max-width: 900px;
+    margin: 0 auto;
+    color: #d9c9b6;
+  }
+  #about h2.section-title {
+    margin-bottom: 1.5em;
+  }
+  #about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5em;
+  }
+  #about .image-wrapper {
+    margin-top: 3em;
+    text-align: center;
+  }
+  #about .image-wrapper img {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow:
+      0 0 30px #bfa46f,
+      inset 0 0 40px #f0d87d;
+  }
+
+  /* Contact Page */
+  #contact {
+    background: #1a1a1a;
+    padding: 4em 1.5em 6em 1.5em;
+    min-height: 100vh;
+  }
+  #contact .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  #contact h2.section-title {
+    margin-bottom: 1.5em;
+  }
+  #contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
+  #contact .brand-info {
+    margin-top: 3em;
+    text-align: center;
+    color: #cfc1a6;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  #contact .brand-info strong {
+    color: #f0d87d;
+  }
+
+  /* Cart Page */
+  #cart {
+    background: #121212;
+    padding: 4em 1.5em 6em 1.5em;
+    min-height: 100vh;
+  }
+  #cart .container {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #d9c9b6;
+  }
+  #cart h2.section-title {
+    margin-bottom: 2em;
+  }
+  #cart .cart-items {
+    border-top: 1px solid #3a2f1a;
+    border-bottom: 1px solid #3a2f1a;
+  }
+  #cart .cart-item {
+    display: flex;
+    gap: 1.5em;
+    padding: 1.5em 0;
+    border-bottom: 1px solid #3a2f1a;
+    align-items: center;
+  }
+  #cart .cart-item:last-child {
+    border-bottom: none;
+  }
+  #cart .cart-item img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow:
+      0 0 15px #bfa46f,
+      inset 0 0 20px #f0d87d;
+  }
+  #cart .cart-item-details {
+    flex: 1;
+  }
+  #cart .cart-item-details h3 {
+    margin-bottom: 0.3em;
+    color: #f0d87d;
+  }
+  #cart .cart-item-details p {
+    font-size: 1rem;
+    color: #cfc1a6;
+  }
+  #cart .cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+  #cart .cart-item-quantity button {
+    background: #2a2a2a;
+    color: #f0d87d;
+    font-weight: 700;
+    font-size: 1.2rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    box-shadow:
+      0 0 8px #bfa46f inset;
+    transition: background-color 0.3s ease;
+  }
+  #cart .cart-item-quantity button:hover,
+  #cart .cart-item-quantity button:focus {
+    background: #f0d87d;
+    color: #121212;
+    outline: none;
+  }
+  #cart .cart-total {
+    margin-top: 2em;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: right;
+    color: #f0d87d;
+    text-shadow:
+      0 0 8px #bfa46f;
+  }
+  #cart button.checkout-btn {
+    margin-top: 2em;
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 1em 0;
+    box-shadow:
+      0 0 15px #f0d87d,
+      0 0 30px #bfa46f;
+    transition: box-shadow 0.4s ease;
+  }
+  #cart button.checkout-btn:hover,
+  #cart button.checkout-btn:focus {
+    box-shadow:
+      0 0 25px #f0d87d,
+      0 0 50px #f0d87d;
+    outline: none;
+  }
+
+  /* Footer */
+  footer {
+    background: #121212;
+    padding: 2em 1.5em;
+    text-align: center;
+    color: #7a6a3a;
+    font-size: 0.9rem;
+    border-top: 1px solid #3a2f1a;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    #product-detail .container {
+      flex-direction: column;
+      align-items: center;
+    }
+    #product-detail .product-info, #product-detail .product-images {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 768px) {
+    nav ul {
+      display: none;
+    }
+    .hamburger {
+      display: flex;
+    }
+    #hero h1 {
+      font-size: 2.5rem;
+    }
+    #hero p {
+      font-size: 1rem;
+    }
+    #hero .bottle-container {
+      width: 240px;
+      height: 360px;
+    }
+    #product-detail .product-info h2 {
+      font-size: 2rem;
+    }
+    #product-detail .product-info .price {
+      font-size: 1.4rem;
+    }
+    #product-detail .product-info .scent-notes ul li {
+      font-size: 0.9rem;
+      padding: 0.4em 0.8em;
+    }
+  }
+  @media (max-width: 480px) {
+    #hero .bottle-container {
+      width: 180px;
+      height: 270px;
+    }
+    #hero button.cta {
+      padding: 0.8em 2em;
+      font-size: 1rem;
+    }
+    #product-detail .product-thumbnails img {
+      width: 50px;
+      height: 75px;
+    }
+    #cart .cart-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    #cart .cart-item img {
+      width: 80px;
+      height: 120px;
+      margin-bottom: 1em;
+    }
+    #cart .cart-item-quantity {
+      margin-top: 1em;
+    }
+  }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&amp;display=swap" rel="stylesheet"/>
+ </head>
+ <body>
+  <nav aria-label="Primary Navigation" role="navigation">
+   <div class="container">
+    <a aria-label="Opulent Essence Home" class="logo" href="#hero" tabindex="1">
+     OPULENT ESSENCE
+    </a>
+    <ul>
+     <li>
+      <a href="#hero" tabindex="2">
+       Home
+      </a>
+     </li>
+     <li>
+      <a href="#product-detail" tabindex="3">
+       Product
+      </a>
+     </li>
+     <li>
+      <a href="#about" tabindex="4">
+       About Us
+      </a>
+     </li>
+     <li>
+      <a href="#contact" tabindex="5">
+       Contact
+      </a>
+     </li>
+     <li>
+      <a aria-label="Shopping Cart" href="#cart" tabindex="6">
+       <i aria-hidden="true" class="fas fa-shopping-cart">
+       </i>
+      </a>
+     </li>
+    </ul>
+    <div aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu" class="hamburger" role="button" tabindex="7">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </div>
+    <ul aria-hidden="true" class="mobile-menu" id="mobile-menu" role="menu">
+     <li role="none">
+      <a href="#hero" role="menuitem" tabindex="-1">
+       Home
+      </a>
+     </li>
+     <li role="none">
+      <a href="#product-detail" role="menuitem" tabindex="-1">
+       Product
+      </a>
+     </li>
+     <li role="none">
+      <a href="#about" role="menuitem" tabindex="-1">
+       About Us
+      </a>
+     </li>
+     <li role="none">
+      <a href="#contact" role="menuitem" tabindex="-1">
+       Contact
+      </a>
+     </li>
+     <li role="none">
+      <a aria-label="Shopping Cart" href="#cart" role="menuitem" tabindex="-1">
+       <i aria-hidden="true" class="fas fa-shopping-cart">
+       </i>
+       Cart
+      </a>
+     </li>
+    </ul>
+   </div>
+  </nav>
+  <main>
+   <!-- Hero Section -->
+   <section aria-label="Hero Section with premium perfume bottle and brand introduction" id="hero">
+    <div class="container hero-content">
+     <h1>
+      Opulent Essence
+     </h1>
+     <p>
+      Discover the art of luxury fragrance, where every note tells a story of elegance and passion.
+     </p>
+     <button aria-describedby="shopNowDesc" class="cta" id="shopNowBtn">
+      Shop Now
+     </button>
+     <span class="sr-only" id="shopNowDesc">
+      Click to view the featured perfume product details
+     </span>
+    </div>
+    <div aria-hidden="true" class="bottle-container">
+     <div class="bottle" id="heroBottle">
+      <img alt="3D rendered premium perfume bottle with gold accents and glass reflections rotating slowly" height="480" src="https://storage.googleapis.com/a1aa/image/1e497e2f-1054-4374-7580-e17f50cc31b6.jpg" width="320"/>
+     </div>
+    </div>
+   </section>
+   <!-- Product Detail Page -->
+   <section aria-label="Product Detail Page for featured perfume" id="product-detail">
+    <h2 class="section-title">
+     The Signature Scent
+    </h2>
+    <div class="container">
+     <div aria-label="Perfume bottle images with multiple angles" class="product-images">
+      <img alt="Front view of premium perfume bottle with gold accents and glass reflections" class="product-main-image" height="600" id="mainProductImage" src="https://storage.googleapis.com/a1aa/image/71c4f8b5-8062-4fa8-b3d3-18fa94a00e1b.jpg" tabindex="0" width="400"/>
+      <div aria-label="Thumbnail images of perfume bottle angles" class="product-thumbnails" role="list">
+       <img alt="Thumbnail front view of perfume bottle" class="selected" height="90" role="listitem" src="https://storage.googleapis.com/a1aa/image/0316491c-5fba-4139-991d-72fea261cd13.jpg" tabindex="0" width="60"/>
+       <img alt="Thumbnail side view of perfume bottle" height="90" role="listitem" src="https://storage.googleapis.com/a1aa/image/d5958bcc-ea9c-40c9-c050-78f34019749a.jpg" tabindex="0" width="60"/>
+       <img alt="Thumbnail back view of perfume bottle" height="90" role="listitem" src="https://storage.googleapis.com/a1aa/image/b45b4905-64a9-450b-397c-2453d8d426a6.jpg" tabindex="0" width="60"/>
+       <img alt="Thumbnail top view of perfume bottle" height="90" role="listitem" src="https://storage.googleapis.com/a1aa/image/269c4720-f88b-421c-8413-4793d9d2d615.jpg" tabindex="0" width="60"/>
+      </div>
+     </div>
+     <div class="product-info">
+      <h2>
+       Opulent Essence - Signature Scent
+      </h2>
+      <p aria-label="Price: $250 USD" class="price">
+       $250
+      </p>
+      <p class="description">
+       An exquisite blend of rare ingredients, crafted to evoke timeless elegance and sophistication. The perfect fragrance for those who desire to leave a lasting impression.
+      </p>
+      <div aria-label="Scent notes of the perfume" class="scent-notes">
+       <h3>
+        Scent Notes
+       </h3>
+       <ul>
+        <li>
+         Top: Bergamot, Pink Pepper
+        </li>
+        <li>
+         Heart: Jasmine, Rose
+        </li>
+        <li>
+         Base: Amber, Sandalwood, Vanilla
+        </li>
+       </ul>
+      </div>
+      <button aria-describedby="addToCartDesc" class="add-to-cart" id="addToCartBtn">
+       Add to Cart
+      </button>
+      <span class="sr-only" id="addToCartDesc">
+       Add the signature scent perfume to your shopping cart
+      </span>
+     </div>
+    </div>
+   </section>
+   <!-- About Us Page -->
+   <section aria-label="About Us and Brand Story" id="about">
+    <h2 class="section-title">
+     Our Story
+    </h2>
+    <div class="container">
+     <p>
+      At Opulent Essence, we believe that fragrance is an art form — a symphony of scents that tells a story unique to each wearer. Founded in 1998, our brand has been dedicated to crafting luxurious perfumes that blend tradition with innovation.
+     </p>
+     <p>
+      Our master perfumers source the finest ingredients from around the world, combining them with meticulous craftsmanship to create scents that are both timeless and modern. Every bottle is a testament to our commitment to quality, elegance, and exclusivity.
+     </p>
+     <p>
+      We invite you to experience the allure of Opulent Essence — where every note is a journey, and every fragrance is a masterpiece.
+     </p>
+     <div aria-hidden="true" class="image-wrapper">
+      <img alt="Luxurious perfume laboratory interior with gold accents, dark wood shelves, and elegant glass bottles" height="500" src="https://storage.googleapis.com/a1aa/image/c4e8341a-4e61-48b0-7541-d53793cf24e1.jpg" width="900"/>
+     </div>
+    </div>
+   </section>
+   <!-- Contact Page -->
+   <section aria-label="Contact Page with form and brand information" id="contact">
+    <h2 class="section-title">
+     Contact Us
+    </h2>
+    <div class="container">
+     <form aria-describedby="contactFormDesc" id="contactForm" novalidate="">
+      <p class="sr-only" id="contactFormDesc">
+       Contact form to send a message to Opulent Essence
+      </p>
+      <div>
+       <label for="name">
+        Name
+       </label>
+       <input aria-describedby="nameError" aria-required="true" id="name" name="name" required="" type="text"/>
+       <span aria-live="polite" class="sr-only" id="nameError">
+       </span>
+      </div>
+      <div>
+       <label for="email">
+        Email
+       </label>
+       <input aria-describedby="emailError" aria-required="true" id="email" name="email" required="" type="email"/>
+       <span aria-live="polite" class="sr-only" id="emailError">
+       </span>
+      </div>
+      <div>
+       <label for="message">
+        Message
+       </label>
+       <textarea aria-describedby="messageError" aria-required="true" id="message" name="message" required="" rows="5"></textarea>
+       <span aria-live="polite" class="sr-only" id="messageError">
+       </span>
+      </div>
+      <button aria-label="Send message to Opulent Essence" type="submit">
+       Send Message
+      </button>
+     </form>
+     <div aria-label="Brand contact information" class="brand-info">
+      <p>
+       <strong>
+        Opulent Essence
+       </strong>
+      </p>
+      <p>
+       123 Luxury Lane, Paris, France
+      </p>
+      <p>
+       Email: contact@opulentessence.com
+      </p>
+      <p>
+       Phone: +33 1 23 45 67 89
+      </p>
+     </div>
+    </div>
+   </section>
+   <!-- Cart Page -->
+   <section aria-label="Shopping Cart and Checkout" id="cart">
+    <h2 class="section-title">
+     Your Cart
+    </h2>
+    <div aria-live="polite" aria-relevant="additions removals" class="container" id="cartContainer" tabindex="0">
+     <div class="cart-items" id="cartItems">
+      <!-- Cart items will be dynamically inserted here -->
+     </div>
+     <p aria-label="Total price" class="cart-total" id="cartTotal">
+      $0
+     </p>
+     <button aria-disabled="true" class="checkout-btn" disabled="" id="checkoutBtn">
+      Proceed to Checkout
+     </button>
+    </div>
+   </section>
+  </main>
+  <footer role="contentinfo">
+   © 2024 Opulent Essence. All rights reserved.
+  </footer>
+  <script>
+   // Mobile menu toggle
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('ul.mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+    hamburger.setAttribute('aria-expanded', !expanded);
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('open');
+    if (mobileMenu.classList.contains('open')) {
+      mobileMenu.querySelectorAll('a').forEach(a => a.tabIndex = 0);
+      mobileMenu.setAttribute('aria-hidden', 'false');
+    } else {
+      mobileMenu.querySelectorAll('a').forEach(a => a.tabIndex = -1);
+      mobileMenu.setAttribute('aria-hidden', 'true');
+    }
+  });
+
+  // Close mobile menu on link click
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', false);
+      mobileMenu.classList.remove('open');
+      mobileMenu.querySelectorAll('a').forEach(a => a.tabIndex = -1);
+      mobileMenu.setAttribute('aria-hidden', 'true');
+    });
+  });
+
+  // Product Detail Image Gallery
+  const thumbnails = document.querySelectorAll('#product-detail .product-thumbnails img');
+  const mainImage = document.getElementById('mainProductImage');
+
+  thumbnails.forEach((thumb, idx) => {
+    thumb.addEventListener('click', () => {
+      thumbnails.forEach(t => t.classList.remove('selected'));
+      thumb.classList.add('selected');
+      // Change main image src and alt based on thumbnail
+      switch(idx) {
+        case 0:
+          mainImage.src = "https://placehold.co/400x600/png?text=Perfume+Bottle+Front+View+with+gold+and+glass+reflection";
+          mainImage.alt = "Front view of premium perfume bottle with gold accents and glass reflections";
+          break;
+        case 1:
+          mainImage.src = "https://placehold.co/400x600/png?text=Perfume+Bottle+Side+View+with+gold+and+glass+reflection";
+          mainImage.alt = "Side view of premium perfume bottle with gold accents and glass reflections";
+          break;
+        case 2:
+          mainImage.src = "https://placehold.co/400x600/png?text=Perfume+Bottle+Back+View+with+gold+and+glass+reflection";
+          mainImage.alt = "Back view of premium perfume bottle with gold accents and glass reflections";
+          break;
+        case 3:
+          mainImage.src = "https://placehold.co/400x600/png?text=Perfume+Bottle+Top+View+with+gold+and+glass+reflection";
+          mainImage.alt = "Top view of premium perfume bottle with gold accents and glass reflections";
+          break;
+      }
+    });
+    thumb.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        thumb.click();
+      }
+    });
+  });
+
+  // Drag to rotate hero bottle
+  const bottle = document.getElementById('heroBottle');
+  let isDragging = false;
+  let startX, startY;
+  let currentX = 0, currentY = 5;
+  let lastX = 0, lastY = 5;
+
+  bottle.style.transform = `rotateY(${currentX}deg) rotateX(${currentY}deg)`;
+
+  bottle.addEventListener('mousedown', e => {
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    bottle.style.animationPlayState = 'paused';
+    bottle.style.cursor = 'grabbing';
+  });
+  window.addEventListener('mouseup', e => {
+    if (isDragging) {
+      isDragging = false;
+      lastX = currentX;
+      lastY = currentY;
+      bottle.style.cursor = 'grab';
+      bottle.style.animationPlayState = 'running';
+    }
+  });
+  window.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    const deltaX = e.clientX - startX;
+    const deltaY = e.clientY - startY;
+    currentX = lastX + deltaX * 0.5;
+    currentY = Math.min(Math.max(lastY - deltaY * 0.3, -20), 20);
+    bottle.style.transform = `rotateY(${currentX}deg) rotateX(${currentY}deg)`;
+  });
+  // Touch events for mobile
+  bottle.addEventListener('touchstart', e => {
+    if (e.touches.length === 1) {
+      isDragging = true;
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      bottle.style.animationPlayState = 'paused';
+    }
+  });
+  window.addEventListener('touchend', e => {
+    if (isDragging) {
+      isDragging = false;
+      lastX = currentX;
+      lastY = currentY;
+      bottle.style.animationPlayState = 'running';
+    }
+  });
+  window.addEventListener('touchmove', e => {
+    if (!isDragging || e.touches.length !== 1) return;
+    const deltaX = e.touches[0].clientX - startX;
+    const deltaY = e.touches[0].clientY - startY;
+    currentX = lastX + deltaX * 0.5;
+    currentY = Math.min(Math.max(lastY - deltaY * 0.3, -20), 20);
+    bottle.style.transform = `rotateY(${currentX}deg) rotateX(${currentY}deg)`;
+  });
+
+  // Shopping Cart Logic (simplified)
+  const addToCartBtn = document.getElementById('addToCartBtn');
+  const cartItemsContainer = document.getElementById('cartItems');
+  const cartTotalEl = document.getElementById('cartTotal');
+  const checkoutBtn = document.getElementById('checkoutBtn');
+
+  let cart = [];
+
+  function updateCartUI() {
+    cartItemsContainer.innerHTML = '';
+    if (cart.length === 0) {
+      cartItemsContainer.innerHTML = '<p style="color:#cfc1a6; text-align:center; padding:2em 0;">Your cart is empty.</p>';
+      cartTotalEl.textContent = '$0';
+      checkoutBtn.disabled = true;
+      checkoutBtn.setAttribute('aria-disabled', 'true');
+      return;
+    }
+    let total = 0;
+    cart.forEach((item, index) => {
+      total += item.price * item.quantity;
+      const itemEl = document.createElement('div');
+      itemEl.className = 'cart-item';
+      itemEl.innerHTML = `
+        <img src="${item.image}" alt="${item.alt}" />
+        <div class="cart-item-details">
+          <h3>${item.name}</h3>
+          <p>Price: $${item.price}</p>
+          <div class="cart-item-quantity" aria-label="Quantity controls for ${item.name}">
+            <button aria-label="Decrease quantity" data-index="${index}" class="decrease">−</button>
+            <span aria-live="polite" aria-atomic="true">${item.quantity}</span>
+            <button aria-label="Increase quantity" data-index="${index}" class="increase">+</button>
+          </div>
+        </div>
+      `;
+      cartItemsContainer.appendChild(itemEl);
+    });
+    cartTotalEl.textContent = `$${total.toFixed(2)}`;
+    checkoutBtn.disabled = false;
+    checkoutBtn.setAttribute('aria-disabled', 'false');
+
+    // Add event listeners for quantity buttons
+    cartItemsContainer.querySelectorAll('button.decrease').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = parseInt(btn.getAttribute('data-index'));
+        if (cart[idx].quantity > 1) {
+          cart[idx].quantity--;
+        } else {
+          cart.splice(idx, 1);
+        }
+        updateCartUI();
+      });
+    });
+    cartItemsContainer.querySelectorAll('button.increase').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = parseInt(btn.getAttribute('data-index'));
+        cart[idx].quantity++;
+        updateCartUI();
+      });
+    });
+  }
+
+  addToCartBtn.addEventListener('click', () => {
+    // Add the signature scent perfume to cart
+    const product = {
+      name: 'Opulent Essence - Signature Scent',
+      price: 250,
+      quantity: 1,
+      image: 'https://placehold.co/100x150/png?text=Perfume+Bottle+Front+View',
+      alt: 'Front view of premium perfume bottle with gold accents and glass reflections'
+    };
+    // Check if product already in cart
+    const existingIndex = cart.findIndex(item => item.name === product.name);
+    if (existingIndex > -1) {
+      cart[existingIndex].quantity++;
+    } else {
+      cart.push(product);
+    }
+    updateCartUI();
+    // Scroll to cart section
+    document.getElementById('cart').scrollIntoView({behavior: 'smooth'});
+  });
+
+  checkoutBtn.addEventListener('click', () => {
+    alert('Thank you for your purchase! This is a conceptual checkout.');
+  });
+
+  // Contact form validation
+  const contactForm = document.getElementById('contactForm');
+  const nameInput = contactForm.querySelector('#name');
+  const emailInput = contactForm.querySelector('#email');
+  const messageInput = contactForm.querySelector('#message');
+  const nameError = document.getElementById('nameError');
+  const emailError = document.getElementById('emailError');
+  const messageError = document.getElementById('messageError');
+
+  function validateEmail(email) {
+    // Simple email regex
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  contactForm.addEventListener('submit', e => {
+    e.preventDefault();
+    let valid = true;
+
+    if (nameInput.value.trim() === '') {
+      nameError.textContent = 'Please enter your name.';
+      valid = false;
+    } else {
+      nameError.textContent = '';
+    }
+    if (!validateEmail(emailInput.value.trim())) {
+      emailError.textContent = 'Please enter a valid email address.';
+      valid = false;
+    } else {
+      emailError.textContent = '';
+    }
+    if (messageInput.value.trim() === '') {
+      messageError.textContent = 'Please enter your message.';
+      valid = false;
+    } else {
+      messageError.textContent = '';
+    }
+
+    if (valid) {
+      alert('Thank you for contacting Opulent Essence. We will get back to you shortly.');
+      contactForm.reset();
+    }
+  });
+
+  // Accessibility helper: hide .sr-only elements visually but keep for screen readers
+  const style = document.createElement('style');
+  style.textContent = `
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0,0,0,0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+  `;
+  document.head.appendChild(style);
+  </script>
+  <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js">
+  </script>
+ </body>
+</html>
